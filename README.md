@@ -1,4 +1,4 @@
-# svelte-snowpack-typescript
+# firebase-functions-mailgun-handlebars-example
 
 > Example of how to send transactional emails from Firebase function with Mailgun and Handlebars :fire:
 
