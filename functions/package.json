@@ -1,0 +1,40 @@
+{
+  "name": "functions",
+  "scripts": {
+    "build": "run-s build:templates build:tsc",
+    "build:templates": "handlebars emails/ -f src/templates.js -c handlebars/runtime",
+    "build:tsc": "tsc",
+    "deploy": "firebase deploy --only functions",
+    "lint": "eslint \"src/**/*\"",
+    "logs": "firebase functions:log",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "watch": "run-p watch:*",
+    "watch:build": "tsc -w"
+  },
+  "engines": {
+    "node": "12"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^9.4.1",
+    "firebase-functions": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/mailgun-js": "^0.22.11",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "firebase-functions-test": "^0.2.3",
+    "handlebars": "^4.7.6",
+    "mailgun.js": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2"
+  },
+  "private": true
+}
